@@ -12,8 +12,7 @@ matb33:collection-hooks
 aldeed:collection2
 aldeed:autoform
 meteoric:ionic@0.1.19
-useraccounts:ionic
-fourseven:scss@2.0.0
+fourseven:scss@=3.2.0
 meteoric:ionic-sass
 meteoric:ionicons-sass
 standard-minifiers
@@ -31,5 +30,13 @@ ejson
 spacebars
 check
 mizzao:autocomplete
-mpowaga:autoform-autocomplete
 meteoric:autoform-ionic
+aldeed:tabular
+mdg:camera
+cfs:ejson-file
+twbs:bootstrap
+accounts-ui
+comerc:bs-typeahead
+comerc:autoform-typeahead
+spacebars-compiler
+mpowaga:autoform-autocomplete

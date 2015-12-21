@@ -1,0 +1,40 @@
+<template name="listcontacts">
+
+  {{#contentFor "headerButtonLeft"}}
+    {{>ionNavBackButton path="registers" text="Registers"}}
+  {{/contentFor}}
+
+  {{#contentFor "headerTitle"}}
+    <h1 class="title">Contacts</h1>
+  {{/contentFor}}
+
+  {{#contentFor "headerButtonRight"}}
+    <button class="button button-clear" >Show Contacts</button>
+
+  {{/contentFor}}
+
+  {{#ionView}}
+    {{#ionContent class="has-header"}}
+    {{#autoForm collection="Registers2" id="registers-new-form" type="insert"  }}
+      <div class="bar bar-header bar-stable">
+        <button  type="button" class="button button-clear">Cancel</button>
+        <h2 class="title">AutoSuggest Register</h2>
+        <button type="submit" class="button button-positive button-clear">Add</button>
+      </div>
+      <div class="content has-header overflow-scroll">
+
+        {{> afQuickFields omitFields="avatarUrl,details.active"}}
+      </div>
+    {{/autoForm}}
+    {{/ionContent}}
+
+  {{/ionView}}
+</template>
+
+<template name="contactlisting">
+    <span >{{config.name}}</span>
+</template>
+
+<template name="nomatch">
+    <span >nomatch</span>
+</template>

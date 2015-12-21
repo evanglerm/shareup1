@@ -1,0 +1,45 @@
+<template name="recordsEdit">
+  {{#contentFor "headerButtonLeft"}}
+    {{>ionNavBackButton path="registers" text="Registers"}}
+  {{/contentFor}}
+
+  {{#contentFor "headerTitle"}}
+    <h1 class="title">Edit Record</h1>
+  {{/contentFor}}
+
+  {{#contentFor "headerButtonRight"}}
+    <button class="button button-clear" data-ion-modal="_recordNew" >Edit</button>
+  {{/contentFor}}
+
+  {{#ionView}}
+    {{#ionContent }}
+
+{{#autoForm schema="NewRegister" id="registers-edit-record" doc=selectedRecordDoc  type="method" meteormethod="demoSubmission" }}
+  <div class="bar bar-header bar-stable">
+    <button data-dismiss="modal" type="button" class="button button-clear">Cancel</button>
+    <h2 class="title">Edit Register</h2>
+    <button type="submit" class="button button-positive button-clear">Add</button>
+  </div>
+  <div class="content has-header overflow-scroll">
+    {{> afQuickFields omitFields="avatarUrl,details.active"}}
+  </div>
+
+{{/autoForm}}
+
+    {{/ionContent}}
+  {{/ionView}}
+</template>
+<template name="dynamic3">
+  {{#autoForm schema="NewRegister" doc=selectedRecordDoc id="registers-new-record" type="update" meteormethod="demoSubmission" }}
+    <div class="bar bar-header bar-stable">
+      <button data-dismiss="modal" type="button" class="button button-clear">Cancel</button>
+      <h2 class="title">Edit Register</h2>
+      <button type="submit" class="button button-positive button-clear">Add</button>
+    </div>
+    <div class="content has-header overflow-scroll">
+      {{> afQuickFields omitFields="avatarUrl,details.active"}}
+    </div>
+
+  {{/autoForm}}
+
+</template>

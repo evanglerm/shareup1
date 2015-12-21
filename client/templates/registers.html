@@ -1,4 +1,6 @@
 <template name="registers">
+
+
   {{#contentFor "headerTitle"}}
     <h1 class="title">Registers</h1>
   {{/contentFor}}
@@ -8,24 +10,26 @@
   {{/contentFor}}
 
   {{#ionView}}
-    {{#ionContent}}
+    {{#ionContent class="has-header"}}
+    {{> loginButtons}}
+    <!-- {{> cameraEvent}}
+     {{> libraryEvent}}
+     {{> img}} -->
+     {{#if currentUser}}
       {{#ionList}}
         {{#each registers}}
-        <!-- //TODO: Tairman this should go to corresponding AutoForm page.
-              1. Currently goes show details of Register.
-              2. Instead it should go to the corresponding AutoForm page of the Register.
-              3. Currently Edit is going to ( right corner) is going to the Autoform
-                to "NewRegister" variable.
-              4. {create new html page}This variable should b made on the run time based on the click on "register.html"
-                itself.
-              5. this "path="registers.show" is defined in router.js. 
-      -->
-          {{#ionItem  path="registers.show" buttonRight=true class="item-icon-right"}}
-            {{config.name}} {{config.desc}}
-            {{> ionIcon icon="ios-arrow-forward" class="positive"}}
-          {{/ionItem}}
+        {{#ionItem   buttonRight=true class="item-icon-right"}}
+          {{config.name}}
+          {{> ionIcon icon="ios-arrow-forward" class="positive"}}
+          <button class="delete">+</button>
+          {{> ionIcon icon="ios-arrow-forward" class="positive"}}
+            <button class="contact">C</button>
+                      <button class="autosuggest">autosuggest</button>
+        {{/ionItem}}
         {{/each}}
       {{/ionList}}
+           {{/if}}
     {{/ionContent}}
+
   {{/ionView}}
 </template>

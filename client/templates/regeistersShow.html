@@ -12,28 +12,14 @@
   {{/contentFor}}
 
   {{#ionView}}
-    {{#ionContent class="padding register-detail"}}
-      {{#with register}}
-        <div class="list card">
-
-          <div class="item ">
-
-            <h2>{{config.name}} {{config.desc}}</h2>
-            <p>{{priority}}</p>
-          </div>
-
-
-          </div>
-          {{#ionList}}
-            {{#each fields}}
-              {{name}}  {{type}}
-
-            {{/each }}
-            {{/ionList}}
-      {{/with}}
+    {{#ionContent class="has-header"}}
+  {{> tabular table=TabularTables.NewTable  selector=selector class="table table-striped table-bordered table-condensed"}}
 
     {{/ionContent}}
-
-
   {{/ionView}}
+
+
 </template>
+<template name="hello">
+  {{Item}}
+  </template>

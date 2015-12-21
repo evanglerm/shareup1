@@ -1,12 +1,13 @@
 <template name="_registersNew">
   {{#ionModal customTemplate=true}}
-    {{#autoForm collection="Registers" id="registers-new-form" type="insert"}}
+    {{#autoForm collection="Registers" id="registers-new-form" type="insert"  }}
       <div class="bar bar-header bar-stable">
         <button data-dismiss="modal" type="button" class="button button-clear">Cancel</button>
         <h2 class="title">Edit Register</h2>
         <button type="submit" class="button button-positive button-clear">Add</button>
       </div>
       <div class="content has-header overflow-scroll">
+
         {{> afQuickFields omitFields="avatarUrl,details.active"}}
       </div>
     {{/autoForm}}

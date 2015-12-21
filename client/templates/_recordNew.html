@@ -1,20 +1,20 @@
 <template name="_recordNew">
   {{#ionModal customTemplate=true}}
-  <!-- TODO : Tairman do the following.
-        1. By Default this will land on New record page like this.
-        2. Header shoudl have Search button which should show Table view of records. ( max ro 10)
-        3. Click on the records should take to "Update:Autoform".
-        4. There is concept of "hidden" in autoform. Its simpel one to grasp.
-        -->
-    {{#autoForm collection="NewRegister" id="registers-new-form" type="insert"}}
-      <div class="bar bar-header bar-stable">
-        <button data-dismiss="modal" type="button" class="button button-clear">Cancel</button>
-        <h2 class="title">Edit Register</h2>
-        <button type="submit" class="button button-positive button-clear">Add</button>
-      </div>
-      <div class="content has-header overflow-scroll">
-        {{> afQuickFields omitFields="avatarUrl,details.active"}}
-      </div>
-    {{/autoForm}}
+
+{{> Template.dynamic template=registerVar}}
   {{/ionModal}}
+</template>
+<template name="dynamic2">
+  {{#autoForm schema="NewRegister" id="registers-new-record" type="method" meteormethod="demoSubmission" }}
+    <div class="bar bar-header bar-stable">
+      <button data-dismiss="modal" type="button" class="button button-clear">Cancel</button>
+      <h2 class="title">Edit Register</h2>
+      <button type="submit" class="button button-positive button-clear">Add</button>
+    </div>
+    <div class="content has-header overflow-scroll">
+      {{> afQuickFields omitFields="avatarUrl,details.active"}}
+    </div>
+
+  {{/autoForm}}
+
 </template>

@@ -8,5 +8,10 @@ Router.map(function() {
 
   //Shareup
   this.route('registers', {path: '/'});
-  this.route('registers.show', {path: '/registers/:_id'});
+    this.route('_registersNew', {path: '/newregister'});
+    this.route('registers.show', {path: '/register/:_id'});
+    this.route('records.edit', {path: '/editRecord/:_id'});
+
+    this.route('listcontacts', {path: '/listcontacts'});
+        this.route('autosuggest', {path: '/autosuggest'});
 });

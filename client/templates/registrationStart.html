@@ -1,0 +1,40 @@
+<template name="registrationStart">
+    <div class="panel-body" id="loginForm">
+    <h2 class="pageTitle">veClient Registration</h2>
+    <form>
+        <div>&nbsp;</div>
+        <fieldset>
+            {{> inputAutocomplete settings=settings id="institution" class="input-xlarge" placeholder="type institution here"}}
+        </fieldset>
+        <div>&nbsp;</div>
+        <button type="submit" class="btn btn-primary btn-sm">Continue Registration</button>
+    </form>
+    </div>
+</template>
+
+<template name="institutionSelectDisplay">
+    <p >{{name.first}}</p>
+</template>
+<template name="cameraEvent">
+  <div>
+    <p>Camera</p>
+    <button>Click Me</button>
+  </div>
+</template>
+
+<template name="libraryEvent">
+  <div>
+    <p>Library</p>
+    <button>Click Me</button>
+  </div>
+</template>
+
+<template name="img">
+  <div>
+    {{#if img}}
+      <img src="{{img}}" alt="">
+    {{else}}
+      <p>No image yet.</p>
+    {{/if}}
+  </div>
+</template>
